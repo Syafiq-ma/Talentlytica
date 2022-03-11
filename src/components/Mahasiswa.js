@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import Select from "../components/Penilaian";
+import Select from "./Select";
+import './styles/mahasiswa.css'
+import { FaUserCircle } from "react-icons/fa";
+
 
 const Mahasiswa = (props) => {
     const [penilaian1,setPenilaian1] = useState(1)
@@ -9,10 +12,10 @@ const Mahasiswa = (props) => {
 
     props.result([penilaian1,penilaian2,penilaian3,penilaian4])
     return(
-        <div>
-            <div>
-                <div>{props.name}</div>
-                <Select 
+        <div className="mahasiswa">
+            <div className="mahasiswa-wrapper">
+                <div className="mahasiswa-name">{props.name}</div>
+                <Select
                     value={penilaian1}
                     onClick={e=>setPenilaian1(parseInt(e.target.value))}
                     onChange={e=>setPenilaian1(parseInt(e.target.value))}

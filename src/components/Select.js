@@ -1,9 +1,10 @@
 import React from "react";
+import './styles/select.css'
 
 const Select = (props) => {
     return(
-        <div>
-            <select value={props.value} onChange={props.onChange} onClick={props.onClick}>
+        <div className="penilaian">
+            <select value={props.value} onChange={props.onChange} onClick={props.onClick} className="select">
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
@@ -14,7 +15,6 @@ const Select = (props) => {
                 <option value={8}>8</option>
                 <option value={9}>9</option>
                 <option value={10}>10</option>
-
             </select>
         </div>
     )

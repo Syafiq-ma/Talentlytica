@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Mahasiswa from "../components/Mahasiswa";
+import './styles/home.css'
 
 const Home = (props) => {
     const result = [
@@ -45,7 +46,6 @@ const Home = (props) => {
         result[9] = data
     }
     function save(){
-        console.log(result)
         const data = JSON.stringify(
             {
                 aspek_penilaian_1 : {
@@ -98,20 +98,30 @@ const Home = (props) => {
                 },
             }
         )
+        console.log(data)
     }
     return(
-        <div>
-            <Mahasiswa name={'Mahasiswa 1'} result={mahasiswa1}/>
-            <Mahasiswa name={'Mahasiswa 2'} result={mahasiswa2}/>
-            <Mahasiswa name={'Mahasiswa 3'} result={mahasiswa3}/>
-            <Mahasiswa name={'Mahasiswa 4'} result={mahasiswa4}/>
-            <Mahasiswa name={'Mahasiswa 5'} result={mahasiswa5}/>
-            <Mahasiswa name={'Mahasiswa 6'} result={mahasiswa6}/>
-            <Mahasiswa name={'Mahasiswa 7'} result={mahasiswa7}/>
-            <Mahasiswa name={'Mahasiswa 8'} result={mahasiswa8}/>
-            <Mahasiswa name={'Mahasiswa 9'} result={mahasiswa9}/>
-            <Mahasiswa name={'Mahasiswa 10'} result={mahasiswa10}/>
-            <button onClick={()=>save()}>save</button>
+        <div className="home">
+            <div className="home-title">Aspek Penilaian Mahasiswa</div>
+            <div className="home-aspek">
+                <div className="home-aspek-list">Aspek Penilaian 1</div>
+                <div className="home-aspek-list">Aspek Penilaian 2</div>
+                <div className="home-aspek-list">Aspek Penilaian 3</div>
+                <div className="home-aspek-list">Aspek Penilaian 4</div>
+            </div>
+            <div className="home-mahasiswa">
+                <Mahasiswa name={'Mahasiswa 1'} result={mahasiswa1}/>
+                <Mahasiswa name={'Mahasiswa 2'} result={mahasiswa2}/>
+                <Mahasiswa name={'Mahasiswa 3'} result={mahasiswa3}/>
+                <Mahasiswa name={'Mahasiswa 4'} result={mahasiswa4}/>
+                <Mahasiswa name={'Mahasiswa 5'} result={mahasiswa5}/>
+                <Mahasiswa name={'Mahasiswa 6'} result={mahasiswa6}/>
+                <Mahasiswa name={'Mahasiswa 7'} result={mahasiswa7}/>
+                <Mahasiswa name={'Mahasiswa 8'} result={mahasiswa8}/>
+                <Mahasiswa name={'Mahasiswa 9'} result={mahasiswa9}/>
+                <Mahasiswa name={'Mahasiswa 10'} result={mahasiswa10}/>
+            </div>
+            <button className="savebtn" onClick={()=>save()}>Simpan</button>
         </div>
     )
 }
